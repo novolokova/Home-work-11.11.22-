@@ -111,7 +111,7 @@ function checkTime() {
     console.log("good day");
   } else if (inputTime >= 18 && inputTime < 23) {
     console.log("good evening");
-  } else if (inputTime > 0 && inputTime < 7) {
+  } else if (inputTime > 0 && inputTime < 7 || inputTime === 23) {
     console.log("good night");
   } else {
     console.log("404 try again");
