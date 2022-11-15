@@ -6,22 +6,21 @@
 // 404 try again
 // виконати 2 варіантами: через switch та if...else if...else
 
-function checkSeasons() {
-  const inputTime = prompt();
 
-  if (inputTime === "1" || inputTime === "2" || inputTime === "12") {
+function checkSeasons(value) {
+  if (value === "1" || value === "2" || value === "12") {
     console.log("winter");
-  } else if (inputTime === "3" || inputTime === "4" || inputTime === "5") {
+  } else if (value === "3" || value === "4" || value === "5") {
     console.log("spring");
-  } else if (inputTime === "6" || inputTime === "7" || inputTime === "18") {
+  } else if (value === "6" || value === "7" || value === "18") {
     console.log("summer");
-  } else if (inputTime === "9" || inputTime === "10" || inputTime === "11") {
+  } else if (value === "9" || value === "10" || value === "11") {
     console.log("fall");
   } else {
     console.log("404 try again");
   }
 
-  switch (inputTime) {
+  switch (value) {
     case "1":
     case "2":
     case "12":
@@ -48,9 +47,7 @@ function checkSeasons() {
   }
 }
 
-//checkSeasons();
-
-
+checkSeasons(prompt('Enter month number'));
 
 // Людина вводить вік (привести до числа), ви виводите класифікацію за віком:
 // [0 - 2) baby
@@ -63,34 +60,32 @@ function checkSeasons() {
 // 404 try again
 // оберіть самі потрібну конструкцію
 
-function checkAge() {
-  const inputUser = prompt();
-
-  const ageUser = Number(inputUser);
-
-  if (ageUser > 0 && ageUser < 2) {
+/**
+ *
+ * @param {string} value
+ */
+function checkAge(value) {
+  value = Number(value);
+  if (value > 0 && value < 2) {
     console.log("baby");
-  } else if (ageUser >= 2 && ageUser < 6) {
+  } else if (value >= 2 && value < 6) {
     console.log("kinder");
-    // console.log(ageUser + ageUser);
-  } else if (ageUser >= 6 && ageUser < 12) {
+  } else if (value >= 6 && value < 12) {
     console.log("child");
-  } else if (ageUser >= 12 && ageUser < 18) {
+  } else if (value >= 12 && value < 18) {
     console.log("teenager");
-  } else if (ageUser >= 18 && ageUser < 65) {
+  } else if (value >= 18 && value < 65) {
     console.log("adult");
-  } else if (ageUser >= 65 && ageUser < 100) {
+  } else if (value >= 65 && value < 100) {
     console.log("oldmen");
-  } else if (ageUser >= 100 && ageUser < 150) {
+  } else if (value >= 100 && value < 150) {
     console.log("super!");
   } else {
     console.log("404 try again");
   }
 }
 
-//checkAge();
-
-
+checkAge(prompt("Enter your age"));
 
 // Людина вводить годину([0-23]), ви виводите привітання
 // [7 - 11) - good morning
@@ -100,54 +95,62 @@ function checkAge() {
 // усе невірне - 404 try again
 // виконати 2 варіантами: через switch та if...else if...else і скажете який краще!!!
 
-function checkTime() {
-  const inputUser = prompt();
-  const inputTime = Number(inputUser);
-
-  if (inputTime >= 7 && inputTime < 11) {
+/**
+ *
+ * @param {string} value
+ */
+function checkTime_1(value) {
+  value = Number(value);
+  if (value >= 7 && value < 11) {
     console.log("good morning");
-    //console.log(inputTime + inputTime);
-  } else if (inputTime >= 11 && inputTime < 18) {
+  } else if (value >= 11 && value < 18) {
     console.log("good day");
-  } else if (inputTime >= 18 && inputTime < 23) {
+  } else if (value >= 18 && value < 23) {
     console.log("good evening");
-  } else if (inputTime >= 0 && inputTime < 7 || inputTime === 23) {
+  } else if ((value >= 0 && value < 7) || value === 23) {
     console.log("good night");
   } else {
     console.log("404 try again");
   }
+}
+checkTime_1(prompt('Enter time_1'));
 
-  switch (inputTime) {
-    case 7:
-    case 8:
-    case 9:
-    case 10:
+/**
+ *
+ * @param {string} value
+ */
+function checkTime_2(value) {
+  switch (value) {
+    case "7":
+    case "8":
+    case "9":
+    case "10":
       console.log("good morning");
       break;
-    case 11:
-    case 12:
-    case 13:
-    case 14:
-    case 15:
-    case 16:
-    case 17:
+    case "11":
+    case "12":
+    case "13":
+    case "14":
+    case "15":
+    case "16":
+    case "17":
       console.log("good day");
       break;
-    case 18:
-    case 19:
-    case 20:
-    case 21:
-    case 22:
+    case "18":
+    case "19":
+    case "20":
+    case "21":
+    case "22":
       console.log("good evening");
       break;
-    case 23:
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
+    case "23":
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
       console.log("good night");
       break;
     default:
@@ -155,4 +158,4 @@ function checkTime() {
       break;
   }
 }
-checkTime();
+checkTime_2(prompt('Enter time_2'));
